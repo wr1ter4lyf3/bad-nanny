@@ -19,4 +19,9 @@ We found a vulnerable PHP file:
 ```php
 exec("wr_mfg_data -m ".$_REQUEST['macAddress']);
 
-That's a bling command execution vulnerability, where user input directly runs a system command with no output shown. It's dangerous because you don't see the attack working—you just know it ran.
+That's a blind command execution vulnerability, where user input directly runs a system command with no output shown. It's dangerous because you don't see the attack working—you know it ran.
+Before today, I thought hacking a nanny cam meant instantly accessing the video feed. Now I see it's not so simple: 
+You need to understand how firmware works
+Where the web app lives 
+What vulnerabilities might let you control the device 
+And yeah...while thuds in my ceiling make me very tempted to imagine what it'd feel like to blast the neighbor's nanny cam with noise 24/7, this challenge reminded me why ethics and mastery are the real flex. 
