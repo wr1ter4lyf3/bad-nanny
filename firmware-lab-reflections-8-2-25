@@ -1,0 +1,22 @@
+🧠 Firmware Analysis Reflections
+
+💻 Day One Highlights (Intro to IoT Hacking - TryHackMe)
+
+Today, I connected to my first vulnerable IoT device via SSH! This taught me a lot about what SSH is—a secure shell protocol, not a GUI app like I initially thought. I also finally understood that the text before `$` in the terminal isn't a command—it's showing my current directory. I used `cd` to navigate, and `ls` to explore the file system.
+
+Then we unzipped a firmware package and extracted its `.tar` archive. Inside were things like:
+- `rootfs.squashfs` — a compressed root filesystem
+- `vmlinux.gz.uImage` — a compressed Linux kernel image
+
+We used `tar -xf` to extract, and I learned that flags like `-x`, `-v`, and `-f` are called **options or switches**. They customize how commands behave. For example:  
+`tar -xf file.tar` means: **extract file from archive**.
+
+🧰 Emulation & Vulnerability Discovery
+
+I then followed along with a walkthrough that used the **Firmware Analysis Toolkit (FAT)** to emulate the system. It blew my mind that tools like `binwalk` can reverse engineer firmware and help uncover embedded web apps and file systems.
+
+We found a vulnerable PHP file:  
+```php
+exec("wr_mfg_data -m ".$_REQUEST['macAddress']);
+
+That's a bling command execution vulnerability, where user input directly runs a system command with no output shown. It's dangerous because you don't see the attack working—you just know it ran.
