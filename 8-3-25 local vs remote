@@ -1,0 +1,111 @@
+🌐 The Two Paths of IoT Attacks: Local vs Remote
+🔒 Local (Inside one's own Wi-Fi)
+What I tried today: 
+You're already on the network, so you can see 192.xxx.xx.x IPs
+
+A hacker would need:
+
+To crack my Wi-Fi password
+
+Or trick someone into joining a compromised guest network
+
+Or infect a trusted device inside my LAN (e.g., phishing, rogue app)
+
+There was a practice CompTIA A+ question that addressed security concerns around IoT devices.
+The correct answer suggested keeping the device's firmware updated and establishing the connections on guest LANs (logical segregation, I think)
+
+🚨 Remote Hacking (Over the Internet)
+
+Question: Can an attacker reach my private IP from the internet directly?
+
+❌ Not unless my router is misconfigured or intentionally forwarding traffic (i.e., port forwarding or UPnP).
+
+So how do they do it? 👇
+
+🧪 Real Remote IoT Attack Chain
+1. Shodan Recon or Search
+Attackers use Shodan.io or Censys to scan the internet for:
+
+Devices with open ports (80, 554, 23, 443, etc.)
+
+Known strings in banners like:
+“WebCamXP”
+“VStarcam”
+“IPCam Web Interface”
+
+They’re looking for cams that are:
+
+Exposing their interface directly to the web
+
+Using default credentials
+
+Or running vulnerable firmware from past CVEs
+
+2. Try to Connect via Public IP
+If my ISP IP is, say, 8.37.42.101, and your router is forwarding port 554 to your cam:
+
+rtsp://8.37.42.101:554/live
+Boom—video stream.
+
+Or:
+http://8.37.42.101:8080
+→ Access to your camera’s login page.
+
+3. Login or Exploit
+Use known default creds (they're often published in manuals)
+
+Brute-force with tools like hydra or medusa
+
+Exploit known CVEs (like a buffer overflow or unauthenticated command execution)
+
+🔐 So How Do You Stay Safe?
+✅ Check for these:
+UPnP disabled on your router (auto-port-forwarding = 🔥🔥🔥)
+
+No manual port forwarding to your cameras
+
+Your cams are not visible on Shodan (I can show you how to check)
+
+Strong Wi-Fi credentials (WPA2/WPA3)
+
+Segmented network or VLAN for IoT
+
+🔍 Want to test your public exposure?
+You can:
+
+Visit: https://www.shodan.io
+
+In the search bar, try:
+
+netcam
+port:554
+country:"US"
+Or search your public IP (you can find it at https://whatismyipaddress.com)
+
+If nothing comes up—GOOD. That means you're not broadcasting your devices to the world.
+
+Some kind of meraki router cam up when I searched on Shodan.io. I was curious but didn't really dive into it. 
+
+There's a difference between hacking remotely and then actual hardware hacking, which usually requires a toolkit ranging from $5-$100 depending on what you're trying to do.
+I watched some of a defcon presentation on it--was really interesting. But yeah, we're trying to do this without any potential shock damage or bricking objects
+
+Going back to local hacking, here were the commands used: 
+
+nmap 
+sudo apt update (apt is Advanced Package Tool that allows for managing software packages on Debian and Debian-based Linux distros)
+sudo apt install nmap -y (Linux kindly let me know that I needed to install it lol)   
+nmap -sn (Ping - finds active hosts)
+nmap -p (Port Scan- checks specific ports) 
+nmap -p- (Scans all 65k+ ports as a Full port scan) 
+nmap -sV (Version detection)
+nmap -O (OS detection)
+nmap -A (Aggro scan)
+
+Then I got eye fatigue from looking at all the scans and decided to pause for here lol that's enough 
+Oh those letters after the dashes are flags or options (sometimes switches depending on the context) 
+I know I'm gonna review this one day and go "uh...no dip!" but hey, we all started somewhere lol for me it was hacking my own nanny cam. 
+nmap is pretty common so I'm glad I got to use this one more today. No successful hacking of the nanny cam (yet!)
+
+
+
+
