@@ -1,0 +1,64 @@
+# ☁️ Cloud vs Local Monitoring in IoT Devices: A Personal and Security-Critical Reflection
+
+## 🤔 Why This Matters
+
+As I began exploring how to secure my nanny cams, I thought the biggest risks were on the device level—default passwords, firmware exploits, exposed ports. But the deeper I go, the more I realize:
+
+> Modern attacks aren’t just about breaking into the device.  
+> They’re about compromising the **ecosystem around it**—especially the cloud.
+
+## 🔍 The Core Insight
+
+When a nanny cam relies on a mobile app that connects to a cloud service, you’re not just interfacing with the camera. You’re interfacing with:
+- Cloud storage servers (where footage is kept)
+- Authentication services (login credentials)
+- Web APIs (used by the app to send and receive commands)
+- Update servers (delivering new firmware)
+- Analytics infrastructure (telemetry, usage stats, etc.)
+
+So even if your home network is secure…  
+Even if your camera is isolated on a guest VLAN…  
+You’re still trusting **a remote architecture you don’t control**.
+
+## 🛠️ Attack Vectors That Now Matter
+
+| Layer | Potential Vulnerability |
+|-------|-------------------------|
+| Cloud Storage | Misconfigured permissions, exposed video buckets |
+| App API | Weak auth, token reuse, insecure endpoints |
+| User Accounts | Credential stuffing, weak passwords reused from breaches |
+| Traffic Flow | Unencrypted connections, expired certs, bad TLS setups |
+| Update Path | Supply chain attacks, poisoned firmware |
+| Analytics | Metadata leakage, facial recognition without consent |
+
+## 🧠 Realization That Hit Me
+
+While talking to my professor, I realized I had a moment where I was like:
+> "I'm over here trying to hack into my own cams… but I didn't even fully understand how **monitoring worked**, let alone how cloud access changes the threat model."
+
+It was funny—but also deeply enlightening.
+
+## 💸 The Money Layer
+
+Most cloud access comes at a price:
+- Premium plans for cloud recording
+- Subscriptions for remote access
+- Lock-in to vendor ecosystems
+
+Which means **privacy now has a subscription fee**, and if you opt out?  
+You’re forced to manually manage local-only setups with fewer features and more friction.
+
+## 💡 Ideas I'm Exploring
+
+- Keeping my cams on a guest network ✅
+- Using a **dedicated device** (e.g., old phone or tablet) for monitoring ✅
+- Considering setting up my own **local NVR solution** or self-hosted software like Blue Iris or MotionEye
+- Learning how to inspect API traffic using tools like Burp Suite or Wireshark to better understand the app-to-cloud relationship
+
+## 🧩 Final Thought
+
+> “Security isn't just about firewalls and passwords. It’s about *asking who owns the infrastructure* behind your peace of mind.”
+
+This repo started as a curiosity about nanny cam security.  
+It’s now becoming a deeper exploration of **how much control we give up**—and how to take it back.
+
