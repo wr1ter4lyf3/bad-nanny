@@ -15,4 +15,4 @@ This private repository documents my research and simulations around securing na
 All research and testing is done in sandboxed environments and does not target or interact with real devices outside my control.
 
 ## Recent Labs
-- 2025‑08‑17 — [Wi‑Fi adapter setup & first SSID capture](./2025-08-20-wifi-adapter-setup-and-first-capture.md)
+- 2025‑08‑17 — [Wi‑Fi adapter setup & first SSID capture](https://github.com/wr1ter4lyf3/bad-nanny/commit/9954736574b18320c6f888bf2cdb6ec419744147)
