@@ -1,0 +1,66 @@
+🆘 Why --help Matters More Than Recall
+
+My “C flag confusion” drove home a bigger point:
+In offensive security, it’s less about memorizing every flag and more about knowing how to contextualize each tool.
+
+Different tools, different jobs:
+
+airodump-ng is for scanning & capturing traffic.
+
+aireplay-ng is for injecting/deauthing clients.
+
+aircrack-ng is for cracking captured files.
+
+Same flag letter ≠ same function:
+
+-c = channel in airodump.
+
+-c = client MAC in aireplay.
+
+aircrack-ng doesn’t use -c at all.
+
+Why --help saves you:
+
+Running toolname --help gives instant context.
+
+It reminds you: what layer of the workflow does this tool operate at?
+
+Do I need to scan, inject, or crack? The help output reorients me.
+
+🧩 Takeaway
+
+Expertise isn’t about raw recall of every flag across every tool.
+It’s about being able to:
+
+Identify which tool is appropriate for the stage of the workflow,
+
+Consult --help to recall the syntax,
+
+Organize commands in your head (or notes) by role (scan → capture → inject → crack).
+
+That way, even if I forget what -c means in the moment, I won’t confuse “channel” with “client,” because the tool’s role tells me what’s possible.
+
+✅ Repo reader moral:
+When in doubt → --help. The real flex isn’t memorization — it’s being able to contextualize the tool and its flags within the bigger workflow.
+
+🌱 Growing Into the Tools
+
+When I opened the --help menu, my first reaction was: “Wow, this is a wall of options.” Some of the filters looked intimidating, almost like I was peeking at a foreign language.
+
+But then it clicked:
+
+Right now, I only need a few core flags to move through the basics.
+
+As I get more fluent, those “scary” filter options will become targeted tools — ways to extract exactly the information I want during recon.
+
+The help menu isn’t just a lifeline; it’s a roadmap of what’s possible as I grow.
+
+That realization made me excited instead of discouraged. It reframes the journey: I don’t need to memorize every command. I need to practice enough that referencing --help feels like consulting a menu, not cramming for a test.
+
+✅ Takeaway
+
+There’s no shame in using --help.
+
+Expertise is fluency + context, not perfect recall.
+
+The fact that the menu looks “big” means the tool is powerful — and my job as a learner is just to grow into it, step by step.
