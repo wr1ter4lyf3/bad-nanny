@@ -15,4 +15,5 @@ This private repository documents my research and simulations around securing na
 All research and testing is done in sandboxed environments and does not target or interact with real devices outside my control.
 
 ## Recent Labs
-- 2025‑08‑17 — [Wi‑Fi adapter setup & first SSID capture](https://github.com/wr1ter4lyf3/bad-nanny/commit/9954736574b18320c6f888bf2cdb6ec419744147)
+- 8-17-25 — [Wi‑Fi adapter setup & first SSID capture](https://github.com/wr1ter4lyf3/bad-nanny/commit/9954736574b18320c6f888bf2cdb6ec419744147)
+- 8-23-25 — [Wifi Cracking 101](https://github.com/wr1ter4lyf3/bad-nanny/blob/847d8b4a1b8bc6b482f04be5571ebf1712edf66f/8-24-25%20Wifi%20Cracking%20101)
