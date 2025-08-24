@@ -1,0 +1,30 @@
+🗝️ My First Crack: Wi-Fi Hacking 101
+
+Today I completed the Wi-Fi Hacking 101 lab on TryHackMe, and it was my first end-to-end wireless engagement.
+
+🔄 What I Did
+
+Set up my Kali VM and fought with shared folders until I won.
+
+Extracted a .tar.gz into .cap files.
+
+Used aircrack-ng to successfully crack my first Wi-Fi password.
+
+Learned how to convert .cap → .hccapx for Hashcat, and understood how it scales for real-world cracking.
+
+🔑 What I Learned
+
+Workflow matters more than flags. Capture → convert → crack.
+
+Aircrack is the “training wheels,” Hashcat is the “power tool.”
+
+Cracking is offline: once you have the handshake, no network/internet required.
+
+Weak passwords are still the #1 entry point. My old password Japanese1 would’ve been toast in seconds — and it reminded me why attackers thrive on human patterns.
+
+⚡ Reflections
+
+This was more than just typing commands. It was the moment where labs started feeling like muscle memory instead of random syntax.
+That “KEY FOUND!” moment made me realize: I can totally see myself doing this for real.
+
+✅ Next Step: Try the same workflow on my own hotspot capture.
