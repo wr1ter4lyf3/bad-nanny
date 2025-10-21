@@ -1,6 +1,5 @@
 # 🛜 Monitoring vs Segmentation: What I Learned the Funny Way
-
-So here's the situation:  
+ 
 I’m diving deep into securing nanny cams—setting up VLANs, scanning IPs with Nmap, planning mitigations—and I realized... I didn’t actually understand how my own monitoring setup *functioned* until I brought it up to my professor.
 
 We laughed, because here I was talking about hacking my nanny cams, and I hadn't fully grasped **the relationship between monitoring apps, local networks, and cloud subscriptions**. And honestly? I think a lot of users are in the same boat.
